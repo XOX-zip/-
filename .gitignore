@@ -1,0 +1,16 @@
+# 忽略文件
+.DS_Store
+Thumbs.db
+*.log
+node_modules/
+.env
+.vscode/
+*.swp
+*.swo
+*~
+
+# GitHub Pages相关
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata

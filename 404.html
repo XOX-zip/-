@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>页面未找到 - MarkSkecher</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .error-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 2rem;
+        }
+        .error-code {
+            font-size: 8rem;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        .error-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        .error-description {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+        .error-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .error-icon {
+            font-size: 4rem;
+            color: #667eea;
+            margin-bottom: 2rem;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1>MarkSkecher</h1>
+                <span style="font-size: 12px; color: #666; margin-left: 5px;">Scratch扩展中心</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">首页</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#about" class="nav-link">关于</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#services" class="nav-link">服务</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#portfolio" class="nav-link">作品</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#contact" class="nav-link">联系</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 错误页面内容 -->
+    <div class="error-container">
+        <div class="error-icon">
+            <i class="fas fa-exclamation-triangle"></i>
+        </div>
+        <div class="error-code">404</div>
+        <h1 class="error-title">页面未找到</h1>
+        <p class="error-description">
+            抱歉，您访问的页面不存在或已被移动。<br>
+            请检查网址是否正确，或返回首页继续浏览。
+        </p>
+        <div class="error-actions">
+            <a href="index.html" class="btn btn-primary">
+                <i class="fas fa-home"></i> 返回首页
+            </a>
+            <a href="javascript:history.back()" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> 返回上页
+            </a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // 添加一些交互效果
+        document.addEventListener('DOMContentLoaded', function() {
+            const errorCode = document.querySelector('.error-code');
+            const errorIcon = document.querySelector('.error-icon');
+            
+            // 添加动画效果
+            errorCode.style.opacity = '0';
+            errorIcon.style.opacity = '0';
+            errorCode.style.transform = 'translateY(-20px)';
+            errorIcon.style.transform = 'translateY(-20px)';
+            
+            setTimeout(() => {
+                errorCode.style.transition = 'all 0.6s ease';
+                errorIcon.style.transition = 'all 0.6s ease';
+                errorCode.style.opacity = '1';
+                errorIcon.style.opacity = '0.7';
+                errorCode.style.transform = 'translateY(0)';
+                errorIcon.style.transform = 'translateY(0)';
+            }, 300);
+        });
+    </script>
+</body>
+</html>
